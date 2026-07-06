@@ -1,0 +1,56 @@
+{
+  "name": "@synoi/verify-core",
+  "version": "0.1.0",
+  "description": "The ONE offline evidence-bundle verifier for SynOI (ADR_019 STEP 8). Depends on @synoi/sraid for RFC 8785 JCS canonicalize + cdroContentCore + hybrid DSSE verifyAttestation. The @synoi/verify CLI and the gateway self-verify both import this single function so a green here means a green there, mechanically.",
+  "license": "Apache-2.0",
+  "homepage": "https://synoi.systems/products/receipts-verifier",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/synoi/synoi-verify-core.git"
+  },
+  "keywords": [
+    "synoi",
+    "receipts",
+    "evidence-bundle",
+    "ed25519",
+    "ml-dsa",
+    "verify",
+    "audit",
+    "cryptography"
+  ],
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx test/bundle-core.test.ts",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@synoi/sraid": "^0.2.0"
+  },
+  "devDependencies": {
+    "@noble/post-quantum": "^0.6.1",
+    "@types/node": "^20.11.0",
+    "tsx": "^4.7.0",
+    "typescript": "^5.4.0"
+  }
+}
