@@ -1,6 +1,6 @@
 {
   "name": "@synoi/verify-core",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The ONE offline evidence-bundle verifier for SynOI (ADR_019 STEP 8). Depends on @synoi/sraid for RFC 8785 JCS canonicalize + cdroContentCore + hybrid DSSE verifyAttestation. The @synoi/verify CLI and the gateway self-verify both import this single function so a green here means a green there, mechanically.",
   "license": "Apache-2.0",
   "homepage": "https://synoi.systems/products/receipts-verifier",
@@ -45,7 +45,7 @@
     "node": ">=22"
   },
   "dependencies": {
-    "@synoi/sraid": "^0.2.0"
+    "@synoi/sraid": "^0.5.0"
   },
   "devDependencies": {
     "@noble/post-quantum": "^0.6.1",
